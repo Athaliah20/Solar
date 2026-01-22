@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>A-Frame Solar System - CSC413</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="sunTexture" src="texture/2k_sun.jpg">
+        <img id="skyTexture" src="texture/2k_stars_milky_way.jpg"> </a-assets>
+        <a-assets>
+  <img id="stars" src="https://cdn.glitch.global/605e2a51-d45f-4d87-a285-9410ad350515/stars.jpg?v=1641343513359">
+</a-assets>
+
+<a-sky src="texture/2k_stars.jpg"></a-sky>
+
+      <!-- <a-sky color="#000000"></a-sky> -->
+
+      <a-entity position="0 5 60" rotation="-20 0 0">
+        <a-camera></a-camera>
+      </a-entity>
+
+     <a-sphere id="sun" position="0 0 0" radius="5" material="src: #sunTexture; shader: flat;">
+    <a-sphere radius="5.2" material="color: yellow; opacity: 0.2; transparent: true; shader: flat"></a-sphere>
+</a-sphere>
+      
+      <!-- <a-light type="point" intensity="2" distance="100" position="0 0 0"></a-light>
+      <a-light type="ambient" intensity="0.2"></a-light> -->
+
+      
+      <a-entity id="orbit-mercury" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+        <a-sphere src="texture/2k_mercury.jpg" position="8 0 0" radius="0.4" color="gray"></a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-venus" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
+        <a-sphere src="texture/2k_venus_atmosphere.jpg" position="11 0 0" radius="0.7" color="orange"></a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-earth" animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear">
+        <a-sphere src="texture/2k_earth_daymap.jpg" position="15 0 0" radius="1" color="blue">
+            <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing: linear">
+                <a-sphere position="2 0 0" radius="0.2" color="white"></a-sphere>
+            </a-entity>
+        </a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-mars" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+        <a-sphere src="texture/2k_mars.jpg" position="19 0 0" radius="0.6" color="red"></a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-jupiter" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
+        <a-sphere src="texture/2k_jupiter.jpg" position="26 0 0" radius="2.5" color="brown"></a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-saturn" animation="property: rotation; to: 0 360 0; loop: true; dur: 35000; easing: linear">
+        <a-entity position="33 0 0">
+            <a-sphere src="texture/2k_saturn_ring_alpha.png" radius="2" color="gold"></a-sphere>
+            <!-- <a-ring rotation="90 0 0" radius-inner="2.5" radius-outer="3.5" color="tan" side="double"></a-ring> -->
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="orbit-uranus" animation="property: rotation; to: 0 360 0; loop: true; dur: 45000; easing: linear">
+        <a-sphere src="texture/2k_uranus.jpg" position="40 0 0" radius="1.5" color="lightblue"></a-sphere>
+      </a-entity>
+
+      <a-entity id="orbit-neptune" animation="property: rotation; to: 0 360 0; loop: true; dur: 55000; easing: linear">
+        <a-sphere src="texture/2k_neptune.jpg" position="46 0 0" radius="1.4" color="darkblue"></a-sphere>
+      </a-entity>
+
+      <!-- <a-entity id="orbit-pluto" animation="property: rotation; to: 0 360 0; loop: true; dur: 65000; easing: linear">
+        <a-sphere position="51 0 0" radius="0.3" color="#a1887f"></a-sphere>
+      </a-entity> -->
+
+    </a-scene>
+  </body>
+</html>
